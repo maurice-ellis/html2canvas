@@ -219,8 +219,8 @@ export class DocumentCloner {
         try {
             clonedCanvas.width = canvas.width;
             clonedCanvas.height = canvas.height;
-            const ctx = canvas.getContext('2d', { willReadFrequently: true });
-            const clonedCtx = clonedCanvas.getContext('2d', { willReadFrequently: true });
+            const ctx = canvas.getContext('2d', {willReadFrequently: true}) as CanvasRenderingContext2D;
+            const clonedCtx = clonedCanvas.getContext('2d', {willReadFrequently: true}) as CanvasRenderingContext2D;
             if (clonedCtx) {
                 if (!this.options.allowTaint && ctx) {
                     clonedCtx.putImageData(ctx.getImageData(0, 0, canvas.width, canvas.height), 0, 0);
