@@ -19,13 +19,13 @@ jobs:
         token: ${{ secrets.PAT_TOKEN }}
     - uses: actions/setup-node@v1
       with:
-        node-version: 12
+        node-version: 16
     - name: Npm install
       run: npm ci
     - name: Configure git
       run: |
-        git config user.name "CI"
-        git config user.email "niklasvh@gmail.com"
+        git config user.name "maurice-ellis"
+        git config user.email "maurice@328studios.co"
     - name: Create release
       run: npm run release -- --preset eslint --release-as ${{ github.event.inputs.version }}
     - name: Print details
